@@ -16,6 +16,7 @@ This is the navigation file for the project context system. Read this first when
 - `contexts/wiki/`: curated living knowledge pages.
 - `contexts/designs/`: design docs for proposed or approved designs.
 - `contexts/sources/`: raw immutable inputs.
+- `contexts/ops/`: runbooks, QA plans, smoke tests, and post-deploy monitoring procedures.
 
 ## Work Queues
 
@@ -31,3 +32,4 @@ This is the navigation file for the project context system. Read this first when
 4. Subagents produce handoffs.
 5. Main Codex curates durable findings into wiki, designs, decisions, plan, and context.
 6. Context linting periodically checks for stale claims, contradictions, orphan tickets, and missing decisions.
+7. Ops artifacts are created or updated only when explicitly requested and after inspecting the current codebase/context.

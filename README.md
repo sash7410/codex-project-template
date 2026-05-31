@@ -10,6 +10,7 @@ Use this template when you want every repo to start with:
 - a ticket system for subagents
 - a handoff area for agent reports
 - a lightweight design/decision/wiki workflow
+- an optional ops lane for runbooks, QA plans, smoke tests, and post-deploy monitoring
 
 ## New Repos
 
@@ -45,3 +46,13 @@ idea -> inbox -> tickets -> subagents -> handoffs -> curated designs/wiki/decisi
 ```
 
 The repo Markdown is the source of truth. Tools like Obsidian or Linear can be useful interfaces, but they should not replace the files.
+
+## Ops Lane
+
+The template includes `contexts/ops/`, but real runbooks and QA scripts should be generated only after the app has enough code/context to make them accurate.
+
+- `runbook.md`: how to run and operate the app.
+- `qa.md`: manual QA plan and corner cases.
+- `qa.sh`: executable smoke test harness.
+- `post-deploy.md`: deployment verification.
+- `monitoring.md`: read-only production monitoring guidance.

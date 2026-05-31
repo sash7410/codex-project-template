@@ -25,3 +25,4 @@ This file is the active todo list and immediate status for the project.
 - [ ] Normalize base idea into `contexts/wiki/project-overview.md`.
 - [ ] Create first project tickets under `contexts/tickets/`.
 - [ ] Record first durable decisions in `contexts/decisions.md`.
+- [ ] Create runbook/QA/post-deploy ops artifacts only after runnable code exists and the user explicitly requests it.

@@ -27,6 +27,7 @@ If the user asks for planning, architecture, tickets, research, or subagents, st
 - `contexts/wiki/`: curated living knowledge.
 - `contexts/tickets/`: one ticket per focused task or subagent.
 - `contexts/handoffs/`: subagent outputs before curation.
+- `contexts/ops/`: runbooks, QA plans, smoke tests, and post-deploy monitoring procedures.
 
 ## Subagent Rules
 
@@ -57,3 +58,14 @@ For non-trivial implementation:
 6. Update context/log/decisions if anything durable changed.
 
 Do not bypass this flow for large architecture, data model, infrastructure, or subagent-driven changes.
+
+## Ops And QA Gate
+
+Operational artifacts are codebase-specific and must reflect the current project state.
+
+- Do not invent or expand `contexts/ops/runbook.md`, `contexts/ops/qa.md`, `contexts/ops/qa.sh`, or post-deploy monitoring procedures unless the user explicitly asks.
+- When asked to create or update ops artifacts, first inspect the current codebase, `contexts/index.md`, `contexts/plan.md`, relevant tickets, relevant designs, and relevant wiki pages.
+- `contexts/ops/qa.sh` may mutate local, test, or staging data only when the target environment is explicit.
+- Production monitoring procedures must be read-only by default. No production DB mutation is allowed unless the user creates an explicit incident/remediation ticket and approves the exact action.
+- If UI participation is required, document the human checkpoints in `contexts/ops/qa.md` and keep automation steps in `contexts/ops/qa.sh`.
+- After QA or post-deploy procedures are run, append a concise entry to `contexts/log.md` with commands, environment, result, and follow-up tickets.

@@ -16,3 +16,8 @@ Use this format:
 
 - Template context system is present.
 - Replace this entry when the template is installed into a real project.
+
+## [YYYY-MM-DD] ops | Ops lane initialized
+
+- Template includes `contexts/ops/` for runbooks, QA plans, smoke tests, post-deploy verification, and monitoring.
+- Real ops content should be generated only from current codebase/context when explicitly requested.
